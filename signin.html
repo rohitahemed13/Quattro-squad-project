@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="xihad.css">
+</head>
+<body>
+    <div class="modal-content">
+        <h2>Sign In</h2>
+        <form id="signInForm">
+            <label for="gmail">Gmail:</label>
+            <input type="email" id="gmail" name="gmail" placeholder="Enter your Gmail ID" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle form submission
+        const signInForm = document.getElementById('signInForm');
+        signInForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert("Try Again Tomorrow");
+            window.history.back(); // Redirect to the previous page
+        });
+    </script>
+</body>
+</html>

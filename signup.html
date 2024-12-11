@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="xihad.css">
+</head>
+<body>
+    <div class="modal-content">
+        <h2>Sign Up</h2>
+        <form id="signUpForm">
+            <label for="signupGmail">Gmail:</label>
+            <input type="email" id="signupGmail" name="gmail" placeholder="Enter your Gmail ID" required>
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="password" placeholder="Enter your Password" required>
+            <label for="phoneNumber">Number:</label>
+            <input type="tel" id="phoneNumber" name="phone" placeholder="Enter 11 digit number" pattern="[0-9]{11}" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle form submission
+        const signUpForm = document.getElementById('signUpForm');
+        signUpForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert("Thanks for joining with us");
+            window.history.back(); // Redirect to the previous page
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classical Store Q.S</title>
+    <link rel="stylesheet" href="xihad.css">
+    <script src="xihad.js" defer></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="Q-it.png" alt="Quattro Squad Logo" class="logo-img">
+            QUATTRO SQUAD
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Here........">
+            <button class="search-icon">🔍</button>
+        </div>
+        <div class="icons">
+            <!-- User Profile -->
+            <div class="user-profile">
+                <button class="user-icon">👤</button>
+                <span>User Profile</span>
+                <div class="profile-options">
+                    <a href="signin.html" class="profile-option">Sign In</a>
+                    <a href="signup.html" class="profile-option">Sign Up</a>
+                </div>
+            </div>
+            
+            <!-- Cart Section -->
+            <div class="cart">
+                <button class="cart-icon">🛒</button>
+                <span>Your Cart Here</span>
+                <select class="size-options" id="sizeSelect">
+                    <option value="">Select Size</option>
+                    <option value="m_size.html">M Size</option>
+                    <option value="l_size.html">L Size</option>
+                    <option value="xl_size.html">XL Size</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Banner Section -->
+        <section class="banner">
+            <h1>Welcome to our QUATTRO Store</h1>
+        </section>
+        <!-- Products Section -->
+        <section class="products"> 
+            <div class="product">
+                <img src="red-tshirt.png" alt="Red T-shirt">
+                <p>Red T-shirt</p>
+                <p class="price">Tk.290</p> <!-- Add this line for the price -->
+            </div>
+
+            <div class="product">
+                <img src="Q.S special.JPG" alt="Q.S T-shirt">
+                <p>Q.S T-shirt</p>
+                <p class="price">Tk.520</p> <!-- Add this line for the price -->
+            </div>
+
+            <div class="product">
+                <img src="green-polo.png" alt="Green Polo Shirt">
+                <p>Green Polo Shirt</p>
+                <p class="price">Tk.290</p> <!-- Add this line for the price -->
+            </div>
+
+            <div class="product">
+                <img src="Alhamdulillah.jpg" alt="Alhamdulillah T-shirt">
+                <p>Alhamdulillah T-shirt</p>
+                <p class="price">Tk.450</p> <!-- Add this line for the price -->
+            </div> 
+
+            <div class="product">
+                <img src="black-tshirt.png" alt="Black T-shirt">
+                <p>Black T-shirt</p>
+                <p class="price">Tk.290</p> <!-- Add this line for the price -->
+            </div>
+
+            <div class="product">
+                <img src="Bangladesh 2.0.jpg" alt="Bangladesh 2.0">
+                <p>Bangladesh 2.0</p>
+                <p class="price">Tk.460</p> <!-- Add this line for the price -->
+            </div>
+
+            <div class="product">
+                <img src="Musafir.jpg" alt="Musafir">
+                <p>Musafir T-shirt </p>
+                <p class="price">Tk.460</p> <!-- Add this line for the price -->
+            </div>
+
+            <div class="product">
+                <img src="Sabr.jpg" alt="Sabr">
+                <p>Sabr T-shirt</p>
+                <p class="price">Tk.460</p> <!-- Add this line for the price -->
+            </div> 
+
+            <div class="product">
+                <img src="Salam.jpg" alt="Salam">
+                <p>Salam T-shirt</p>
+                <p class="price">Tk.460</p> <!-- Add this line for the price -->
+            </div>
+
+            <div class="product">
+                <img src="Hoodie 1.jpg" alt="Hoodie 1">
+                <p>Hooded Ice Chocolate</p>
+                <p class="price">Tk.1499</p> <!-- Add this line for the price -->
+            </div>
+
+            <div class="product">
+                <img src="Hoodie 2.jpg" alt="Ice blue">
+                <p>Hooded Ice Blue</p>
+                <p class="price">Tk.1499</p> <!-- Add this line for the price -->
+            </div>
+            
+            <div class="product">
+                <img src="Hoodie 3.jpg" alt="Ice black">
+                <p>Hooded Ice Black</p>
+                <p class="price">Tk.1499</p> <!-- Add this line for the price -->
+            </div>
+
+
+        </section>
+        <footer > </br> </br></br></br>
+            <div > 
+                <p align="center"> QUATTRO Store &copy; All Right Reserved by QUATTRO SQUAD.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.querySelector('.search-bar input');
+            const searchButton = document.querySelector('.search-bar button');
+            const userIcon = document.querySelector('.user-icon');
+            const cartIcon = document.querySelector('.cart-icon');
+            const products = document.querySelectorAll('.product');
+            const sizeSelect = document.getElementById('sizeSelect');
+            const profileOptions = document.querySelector('.profile-options');
+
+            // Handle size selection change
+            sizeSelect.addEventListener('change', () => {
+                const selectedValue = sizeSelect.value;
+                if (selectedValue) {
+                    window.location.href = selectedValue;
+                }
+            });
+
+            // Handle search input
+            searchButton.addEventListener('click', () => {
+                const query = searchInput.value.toLowerCase();
+                products.forEach(product => {
+                    const productName = product.querySelector('p').textContent.toLowerCase();
+                    product.style.display = productName.includes(query) ? 'block' : 'none';
+                });
+            });
+
+            // User icon click event
+            userIcon.addEventListener('click', () => {
+                profileOptions.style.display = profileOptions.style.display === 'flex' ? 'none' : 'flex';
+            });
+
+            // Cart icon click event
+            cartIcon.addEventListener('click', () => {
+                sizeSelect.style.display = sizeSelect.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Product click event
+            products.forEach(product => {
+                product.addEventListener('click', () => {
+                    const productName = product.querySelector('p').textContent;
+                    alert(`You selected: ${productName}`);
+                });
+            });
+        });
+ </script>
+</body>
+</html>
